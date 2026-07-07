@@ -37,6 +37,8 @@
       jboot = "journalctl -b";
       jf = "journalctl -f";
       jerr = "journalctl -p 3 -xb";
+      hms = "home-manager switch --flake ~/nix-config#sreehari";
+
     };
 
   };
@@ -44,5 +46,39 @@
     enable = true;
     enableBashIntegration = true;
     settings = builtins.fromJSON (builtins.readFile ./configs/oh-my-posh/1_shell.omp.json);
+  };
+  programs.git = {
+    enable = true;
+
+    userName = "Sreehari Anil";
+    userEmail = "sreehari7102008@gmail.com";
+
+    signing = {
+      key = "/home/sreehari/.ssh/id_rsa.pub";
+      signByDefault = true;
+    };
+
+    extraConfig = {
+      gpg.format = "ssh";
+      gpg."ssh".program = "ssh-keygen";
+
+      init.defaultBranch = "main";
+
+      credential.helper = "store";
+
+      sendemail = {
+        smtpserver = "smtp.gmail.com";
+        smtpuser = "sreehari7102008@gmail.com";
+        smtpencryption = "tls";
+        smtpserverport = 587;
+      };
+
+      filter."lfs" = {
+        clean = "git-lfs clean -- %f";
+        smudge = "git-lfs smudge -- %f";
+        process = "git-lfs filter-process";
+        required = true;
+      };
+    };
   };
 }
