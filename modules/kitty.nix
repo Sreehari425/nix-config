@@ -1,9 +1,14 @@
-# modules/kitty.nix
-{ pkgs, ... }:
+# Accept 'nixgl' from our extraSpecialArgs
+{ pkgs, nixgl, ... }:
 
 {
   programs.kitty = {
     enable = true;
+
+    # Clean wrapper leveraging your Flake inputs directly
+    package = pkgs.writeShellScriptBin "kitty" ''
+      exec ${nixgl.packages.${pkgs.system}.nixGLDefault}/bin/nixGL ${pkgs.kitty}/bin/kitty "$@"
+    '';
 
     font = {
       name = "FiraCode Nerd Font Mono";
