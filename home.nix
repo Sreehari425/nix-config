@@ -15,7 +15,6 @@
   home.packages = with pkgs; [
     helix
     fastfetch
-    git
   ];
 
   # home.sessionVariables = {
