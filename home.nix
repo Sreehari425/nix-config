@@ -18,11 +18,10 @@
     git
   ];
 
-  home.sessionVariables = {
-    MANPAGER = "nvim +Man!";
-    POWERLINE_COMMAND = "oh-my-posh";
-    POSH_THEME = "${config.xdg.configHome}/oh-my-posh/1_shell.omp.json";
-  };
+  # home.sessionVariables = {
+  #   MANPAGER = "nvim +Man!";
+  #   POSH_THEME = "${config.xdg.configHome}/oh-my-posh/1_shell.omp.json";
+  # };
 
   programs.bash = {
     enable = true;
@@ -44,5 +43,6 @@
   programs.oh-my-posh = {
     enable = true;
     enableBashIntegration = true;
+    settings = builtins.fromJSON (builtins.readFile ./configs/oh-my-posh/1_shell.omp.json);
   };
 }
