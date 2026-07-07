@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-
   imports = [
     ./dotfiles.nix
   ];
@@ -18,4 +17,32 @@
     fastfetch
     git
   ];
+
+  home.sessionVariables = {
+    MANPAGER = "nvim +Man!";
+    POWERLINE_COMMAND = "oh-my-posh";
+    POSH_THEME = "${config.xdg.configHome}/oh-my-posh/1_shell.omp.json";
+  };
+
+  programs.bash = {
+    enable = true;
+
+    shellAliases = {
+      ff = "fastfetch";
+      nf = "neofetch";
+      hx = "helix";
+      vmm = "virt-manager";
+      zj = "zellij";
+
+      jlog = "journalctl -xe";
+      jboot = "journalctl -b";
+      jf = "journalctl -f";
+      jerr = "journalctl -p 3 -xb";
+    };
+
+  };
+  programs.oh-my-posh = {
+    enable = true;
+    enableBashIntegration = true;
+  };
 }
