@@ -50,28 +50,18 @@
   programs.git = {
     enable = true;
 
-    userName = "Sreehari Anil";
-    userEmail = "sreehari7102008@gmail.com";
-
-    signing = {
-      key = "/home/sreehari/.ssh/id_rsa.pub";
-      signByDefault = true;
-    };
-
-    extraConfig = {
-      gpg.format = "ssh";
-      gpg."ssh".program = "ssh-keygen";
+    settings = {
+      user = {
+        name = "Sreehari Anil";
+        email = "sreehari7102008@gmail.com";
+      };
 
       init.defaultBranch = "main";
 
-      credential.helper = "store";
+      gpg.format = "ssh";
+      gpg."ssh".program = "ssh-keygen";
 
-      sendemail = {
-        smtpserver = "smtp.gmail.com";
-        smtpuser = "sreehari7102008@gmail.com";
-        smtpencryption = "tls";
-        smtpserverport = 587;
-      };
+      commit.gpgSign = true;
 
       filter."lfs" = {
         clean = "git-lfs clean -- %f";
@@ -79,6 +69,19 @@
         process = "git-lfs filter-process";
         required = true;
       };
+
+      sendemail = {
+        smtpserver = "smtp.gmail.com";
+        smtpuser = "sreehari7102008@gmail.com";
+        smtpencryption = "tls";
+        smtpserverport = 587;
+      };
+    };
+
+    signing = {
+      key = "/home/sreehari/.ssh/id_rsa.pub";
+      signByDefault = true;
     };
   };
+
 }
