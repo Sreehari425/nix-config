@@ -17,4 +17,10 @@
   home.packages = with pkgs; [
     fastfetch
   ];
+  nix.gc = {
+    automatic = true;
+    frequency = "weekly";
+    options = "--delete-older-than 10d";
+  };
+
 }
