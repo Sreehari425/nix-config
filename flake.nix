@@ -25,8 +25,10 @@
     }: # Destructure nixgl here
     let
       system = "x86_64-linux";
+      nixpkgsOverlays = import ./overlays;
       pkgs = import nixpkgs {
         inherit system;
+        overlays = nixpkgsOverlays;
       };
     in
     {
