@@ -6,6 +6,7 @@
     ./modules/bash.nix
     ./modules/git.nix
     ./modules/helix.nix
+    ./modules/zellij.nix
   ];
 
   home.username = "sreehari";
