@@ -14,14 +14,18 @@
     settings = {
       background_opacity = "0.3";
       background_blur = 1;
-      remember_window_size = "no";
-      initial_width = "900";
-      initial_height = "600";
       enable_audio_bell = "no";
+
+      # Fixed the window sizing config keys here:
+      remember_window_size = "no";
+      initial_window_width = "900";
+      initial_window_height = "600";
+
+      # Forces Kitty to use native Wayland, falling back to X11 if needed
+      linux_display_server = "auto";
     };
   };
 
-  # Optional: Automatically ensures the font is installed for your user profile
   home.packages = [
     pkgs.nerd-fonts.fira-code
   ];
