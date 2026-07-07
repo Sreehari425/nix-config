@@ -37,7 +37,7 @@
         extraSpecialArgs = { inherit nixgl; };
 
         modules = [
-          ./home.nix
+          ./home/home.nix
         ];
       };
     };
