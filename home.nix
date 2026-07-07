@@ -7,6 +7,7 @@
     ./modules/git.nix
     ./modules/helix.nix
     ./modules/zellij.nix
+    ./modules/kitty.nix
   ];
 
   home.username = "sreehari";
