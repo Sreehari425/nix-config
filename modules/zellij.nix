@@ -2,7 +2,6 @@
   programs.zellij = {
     enable = true;
     settings = {
-      pane_frames = false;
 
       # Overriding the floating pane toggle to Alt + G
       keybinds = {
