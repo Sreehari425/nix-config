@@ -57,8 +57,10 @@
 
       init.defaultBranch = "main";
 
-      gpg.format = "ssh";
-      gpg."ssh".program = "ssh-keygen";
+      gpg = {
+        format = "ssh";
+        "ssh".program = "ssh-keygen";
+      };
 
       commit.gpgSign = true;
 
@@ -70,7 +72,7 @@
       };
 
       sendemail = {
-        smtpserver = "smtp.gmail.com";
+        smtpserver = "://gmail.com";
         smtpuser = "sreehari7102008@gmail.com";
         smtpencryption = "tls";
         smtpserverport = 587;
