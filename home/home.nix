@@ -8,6 +8,8 @@
     ./modules/helix.nix
     ./modules/zellij.nix
     ./modules/kitty.nix
+    ./modules/catppuccin.nix
+
   ];
 
   home.username = "sreehari";

@@ -14,6 +14,8 @@
       url = "github:nix-community/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix";
+
   };
 
   outputs =
@@ -21,6 +23,7 @@
       nixpkgs,
       home-manager,
       nixgl,
+      catppuccin,
       ...
     }: # Destructure nixgl here
     let
@@ -39,6 +42,8 @@
         extraSpecialArgs = { inherit nixgl; };
 
         modules = [
+          catppuccin.homeModules.catppuccin # for rofi powermenu.sh
+
           ./home/home.nix
         ];
       };
