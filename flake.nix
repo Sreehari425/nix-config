@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
-
+    quantum-launcher.url = "github:Sreehari425/quantumlauncher/nix";
   };
 
   outputs =
@@ -24,6 +24,7 @@
       home-manager,
       nixgl,
       catppuccin,
+      quantum-launcher,
       ...
     }: # Destructure nixgl here
     let
@@ -39,11 +40,13 @@
         inherit pkgs;
 
         # Pass nixgl down into your modules so modules/kitty.nix can read it
-        extraSpecialArgs = { inherit nixgl; };
+        extraSpecialArgs = {
+          inherit nixgl;
+          quantumLauncher = quantum-launcher;
+        };
 
         modules = [
           catppuccin.homeModules.catppuccin # for rofi powermenu.sh
-
           ./home/home.nix
         ];
       };
