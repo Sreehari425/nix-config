@@ -11,6 +11,7 @@
     ./modules/nix-settings.nix
     ./modules/system.nix
     ./modules/bluetooth.nix
+    ./modules/fonts.nix
   ];
   fileSystems."/" = {
     device = "/dev/sda1";
