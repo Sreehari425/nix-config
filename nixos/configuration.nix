@@ -10,6 +10,7 @@
     ./modules/desktop.nix
     ./modules/nix-settings.nix
     ./modules/system.nix
+    ./modules/bluetooth.nix
   ];
   fileSystems."/" = {
     device = "/dev/sda1";
