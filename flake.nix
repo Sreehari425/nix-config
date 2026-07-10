@@ -57,10 +57,11 @@
           ./home/home.nix
         ];
       };
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.tp-orion = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           ./nixos/configuration.nix
+          ./nixos/hosts/tp-orion
           lanzaboote.nixosModules.lanzaboote
           { nixpkgs.pkgs = systemPkgs; }
         ];

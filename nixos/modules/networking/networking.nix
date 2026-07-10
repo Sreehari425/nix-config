@@ -1,8 +1,5 @@
 { ... }:
 {
-  networking = {
-    hostName = "your-hostname-here";
-  };
 
   services.resolved = {
     enable = true;
