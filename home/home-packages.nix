@@ -1,8 +1,6 @@
 {
-  nixpkgs = {
-    overlays = import ./overlays;
-    config = {
-      allowUnfree = true;
-    };
+  overlays = import ./overlays;
+  config = {
+    allowUnfree = true;
   };
 }
