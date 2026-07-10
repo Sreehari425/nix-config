@@ -6,16 +6,7 @@
     "flakes"
   ];
 
+  # for the overlay for lix go to nixos/overlay/lix/default.nix
   nix.package = pkgs.lixPackageSets.latest.lix;
-  nixpkgs.overlays = [
-    (final: prev: {
-      inherit (prev.lixPackageSets.stable)
-        nixpkgs-review
-        nix-eval-jobs
-        nix-fast-build
-        colmena
-        ;
-    })
-  ];
 
 }
