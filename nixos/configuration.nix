@@ -10,4 +10,7 @@
     ./modules/audio.nix
     ./modules/desktop.nix
   ];
+
+  system.stateVersion = "26.05";
+
 }

@@ -50,5 +50,13 @@
           ./home/home.nix
         ];
       };
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./nixos/configuration.nix
+        ];
+      };
+
     };
+
 }
