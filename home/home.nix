@@ -10,6 +10,7 @@
     ./modules/kitty.nix
     ./modules/catppuccin.nix
     ./modules/quantum-launcher.nix
+    ./modules/ime.nix
   ];
 
   home.username = "sreehari";
