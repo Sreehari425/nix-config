@@ -4,6 +4,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,6 +21,7 @@
     };
     catppuccin.url = "github:catppuccin/nix";
     quantum-launcher.url = "github:Sreehari425/quantumlauncher/nix";
+
   };
 
   outputs =
@@ -25,6 +31,7 @@
       nixgl,
       catppuccin,
       quantum-launcher,
+      lanzaboote,
       ...
     }: # Destructure nixgl here
     let
@@ -54,6 +61,7 @@
         inherit system;
         modules = [
           ./nixos/configuration.nix
+          lanzaboote.nixosModules.lanzaboote
           { nixpkgs.pkgs = systemPkgs; }
         ];
       };
