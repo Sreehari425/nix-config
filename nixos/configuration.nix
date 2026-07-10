@@ -7,11 +7,12 @@
     ./modules/networking
     ./modules/users.nix
     ./modules/audio.nix
-    ./modules/desktop.nix
     ./modules/nix-settings.nix
     ./modules/system.nix
     ./modules/bluetooth.nix
     ./modules/fonts.nix
+    ./modules/graphical
+    ./modules/desktops
   ];
   fileSystems."/" = {
     device = "/dev/sda1";
