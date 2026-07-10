@@ -29,15 +29,15 @@
     }: # Destructure nixgl here
     let
       system = "x86_64-linux";
-      nixpkgsOverlays = import ./overlays;
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = nixpkgsOverlays;
-      };
+      homePkgs = import nixpkgs ({ inherit system; } // (import ./home/home-packages.nix));
+
+      systemPkgs = import nixpkgs ({ inherit system; } // (import ./nixos/system-packages.nix));
+
     in
     {
       homeConfigurations.sreehari = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+
+        pkgs = homePkgs;
 
         # Pass nixgl down into your modules so modules/kitty.nix can read it
         extraSpecialArgs = {
@@ -54,6 +54,7 @@
         inherit system;
         modules = [
           ./nixos/configuration.nix
+          { nixpkgs.pkgs = systemPkgs; }
         ];
       };
 
