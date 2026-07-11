@@ -7,6 +7,8 @@
     ../../modules/bluetooth.nix
     ../../modules/audio.nix
     ../../modules/printing.nix
+    ../../modules/dns
+    ../../modules/vpn/tailscale.nix
   ];
 
   networking.hostName = "tp-orion";

@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
 
   services.resolved = {
@@ -17,4 +17,6 @@
       };
     };
   };
+  networking.networkmanager.dns = lib.mkForce "systemd-resolved";
+
 }
