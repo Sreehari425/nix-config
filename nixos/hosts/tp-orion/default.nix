@@ -3,10 +3,11 @@
     ./battery.nix
     ../../modules/fonts.nix
     ../../modules/graphical
+    ../../modules/services/display-manager.nix
     ../../modules/desktops/hyprland.nix
-    ../../modules/bluetooth.nix
-    ../../modules/audio.nix
-    ../../modules/printing.nix
+    ../../modules/services/bluetooth.nix
+    ../../modules/services/audio.nix
+    ../../modules/services/printing.nix
     ../../modules/dns
     ../../modules/vpn/tailscale.nix
   ];
