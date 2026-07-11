@@ -3,7 +3,7 @@
   imports = [
     ./networking.nix
     ./networkmanager.nix
-    ./dnscrypt-proxy.nix
+    ./dnscrypt
     ./firewall.nix
     ./tailscale.nix
     ./avahi.nix
