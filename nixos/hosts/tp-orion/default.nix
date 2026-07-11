@@ -10,6 +10,7 @@
     ../../modules/services/printing.nix
     ../../modules/dns
     ../../modules/vpn/tailscale.nix
+    ./secureboot.nix
   ];
 
   networking.hostName = "tp-orion";
