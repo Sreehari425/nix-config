@@ -11,6 +11,8 @@
     ../../modules/dns
     ../../modules/vpn/tailscale.nix
     ./secureboot.nix
+    ./kernel.nix
+
   ];
 
   networking.hostName = "tp-orion";
