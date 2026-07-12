@@ -57,17 +57,15 @@
 
   reject_ttl = 10;
 
-  forwarding_rules = "/etc/dnscrypt-proxy/forwarding-rules.txt";
-
   cache = true;
   cache_size = 4096;
   cache_min_ttl = 2400;
   cache_max_ttl = 86400;
   cache_neg_min_ttl = 60;
   cache_neg_max_ttl = 600;
-
-  blocked_names_file = "/var/lib/dnscrypt-proxy/hagezi.txt";
-
+  blocked_names = {
+    blocked_names_file = "/var/lib/dnscrypt-proxy/hagezi.txt";
+  };
   sources = {
     public-resolvers = {
       urls = [
