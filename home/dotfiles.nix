@@ -1,17 +1,18 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
+let
+  dotfiles = "${config.home.homeDirectory}/nix-config/home/configs";
+in
 {
   xdg.configFile = {
-    "hypr".source = ./configs/hypr;
-
-    "waybar".source = ./configs/waybar;
-
-    "rofi".source = ./configs/rofi;
+    "hypr".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/hypr";
+    "waybar".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/waybar";
+    "rofi".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/rofi";
     "oh-my-posh/1_shell.omp.json".source = ./configs/oh-my-posh/1_shell.omp.json;
+
   };
+
   home.packages = [
-    pkgs.papirus-icon-theme # this for rofi powermenu.sh so it wont show BOX
-
+    pkgs.papirus-icon-theme
   ];
-
 }
