@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   listen_addresses = [
     "127.0.0.1:5300"
     "[::1]:5300"
@@ -45,6 +45,12 @@
     "9.9.9.11:53"
     "8.8.8.8:53"
   ];
+
+  forwarding_rules = pkgs.writeText "forwarding-rules.txt" ''
+    local 192.168.1.1
+    *.local 192.168.1.1
+    168.192.in-addr.arpa 192.168.1.1
+  '';
 
   ignore_system_dns = true;
 
