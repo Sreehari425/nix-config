@@ -13,6 +13,7 @@
     ./secureboot.nix
     ./kernel.nix
     ../../modules/services/keyring.nix
+    ./fingerprint.nix
   ];
 
   networking.hostName = "tp-orion";
