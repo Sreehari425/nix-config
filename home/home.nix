@@ -11,6 +11,7 @@
     ./modules/catppuccin.nix
     ./modules/quantum-launcher.nix
     ./modules/ime.nix
+    ./modules/hyprland.nix
   ];
 
   home.username = "sreehari";
