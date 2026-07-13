@@ -13,7 +13,12 @@
       jboot = "journalctl -b";
       jf = "journalctl -f";
       jerr = "journalctl -p 3 -xb";
-
+      ls = "eza --icons --group-directories-first";
+      l = "eza --icons --group-directories-first";
+      ll = "eza -la --icons --git --group-directories-first";
+      la = "eza -a --icons --group-directories-first";
+      lt = "eza --tree --icons --level=2";
+      lh = "eza -lh --icons --group-directories-first";
       hms =
         if isNixOS then
           "home-manager switch --flake ~/nix-config#sreehari-nixos"
@@ -21,7 +26,9 @@
           "home-manager switch --flake ~/nix-config#sreehari-standalone";
     };
   };
-
+  programs.eza = {
+    enable = true;
+  };
   programs.oh-my-posh = {
     enable = true;
     enableBashIntegration = true;
