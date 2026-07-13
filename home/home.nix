@@ -12,6 +12,7 @@
     ./modules/quantum-launcher.nix
     ./modules/ime.nix
     ./modules/hyprland.nix
+    ./modules/cli.nix
   ];
 
   home.username = "sreehari";
@@ -20,9 +21,6 @@
 
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs; [
-    fastfetch
-  ];
   nix.gc = {
     automatic = true;
     dates = "weekly";
