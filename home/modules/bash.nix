@@ -1,6 +1,9 @@
-{ ... }: {
+{ isNixOS, ... }:
+
+{
   programs.bash = {
     enable = true;
+
     shellAliases = {
       ff = "fastfetch";
       nf = "neofetch";
@@ -10,12 +13,18 @@
       jboot = "journalctl -b";
       jf = "journalctl -f";
       jerr = "journalctl -p 3 -xb";
-      hms = "home-manager switch --flake ~/nix-config#sreehari";
+
+      hms =
+        if isNixOS then
+          "home-manager switch --flake ~/nix-config#sreehari-nixos"
+        else
+          "home-manager switch --flake ~/nix-config#sreehari-standalone";
     };
   };
+
   programs.oh-my-posh = {
     enable = true;
     enableBashIntegration = true;
-    settings = builtins.fromJSON (builtins.readFile ../configs/oh-my-posh/1_shell.omp.json); # Adjusted relative path
+    settings = builtins.fromJSON (builtins.readFile ../configs/oh-my-posh/1_shell.omp.json);
   };
 }

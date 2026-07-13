@@ -42,7 +42,7 @@
 
     in
     {
-      homeConfigurations.sreehari = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.sreehari-standalone = home-manager.lib.homeManagerConfiguration {
 
         pkgs = homePkgs;
 
@@ -50,6 +50,7 @@
         extraSpecialArgs = {
           inherit nixgl;
           quantumLauncher = quantum-launcher;
+          isNixOS = false;
         };
 
         modules = [
@@ -57,6 +58,22 @@
           ./home/home.nix
         ];
       };
+      homeConfigurations.sreehari-nixos = home-manager.lib.homeManagerConfiguration {
+
+        pkgs = homePkgs;
+
+        extraSpecialArgs = {
+          inherit nixgl;
+          quantumLauncher = quantum-launcher;
+          isNixOS = true;
+        };
+
+        modules = [
+          catppuccin.homeModules.catppuccin # for rofi powermenu.sh
+          ./home/home.nix
+        ];
+      };
+
       nixosConfigurations.tp-orion = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [

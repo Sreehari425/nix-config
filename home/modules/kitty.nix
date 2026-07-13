@@ -1,14 +1,26 @@
-{ pkgs, nixgl, ... }:
+{
+  pkgs,
+  nixgl,
+  isNixOS,
+  ...
+}:
 
+let
+  kittyPackage =
+    if isNixOS then
+      pkgs.kitty
+    else
+      pkgs.writeShellScriptBin "kitty" ''
+        exec ${
+          nixgl.packages.${pkgs.stdenv.hostPlatform.system}.nixGLIntel
+        }/bin/nixGLIntel ${pkgs.kitty}/bin/kitty "$@"
+      '';
+in
 {
   programs.kitty = {
     enable = true;
 
-    package = pkgs.writeShellScriptBin "kitty" ''
-      exec ${
-        nixgl.packages.${pkgs.stdenv.hostPlatform.system}.nixGLIntel
-      }/bin/nixGLIntel ${pkgs.kitty}/bin/kitty "$@"
-    '';
+    package = kittyPackage;
 
     font = {
       name = "FiraCode Nerd Font Mono";
