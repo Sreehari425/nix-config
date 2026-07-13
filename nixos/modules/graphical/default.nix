@@ -4,5 +4,6 @@
     ./polkit.nix
     ./xdg.nix
     ./graphics.nix
+    ./tools.nix
   ];
 }
