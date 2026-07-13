@@ -9,7 +9,11 @@ in
     "waybar".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/waybar";
     "rofi".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/rofi";
     "oh-my-posh/1_shell.omp.json".source = ./configs/oh-my-posh/1_shell.omp.json;
-
+    "nixpkgs/config.nix".text = ''
+      {
+        allowUnfree = true;
+      }
+    '';
   };
 
   home.packages = [
