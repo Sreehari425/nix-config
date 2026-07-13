@@ -34,4 +34,8 @@
     enableBashIntegration = true;
     settings = builtins.fromJSON (builtins.readFile ../configs/oh-my-posh/1_shell.omp.json);
   };
+  programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+  };
 }
