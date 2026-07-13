@@ -8,6 +8,7 @@
     ./modules/users.nix
     ./modules/nix-settings.nix
     ./modules/system.nix
+    ./modules/services/openssh.nix
   ];
   fileSystems."/" = {
     device = "/dev/sda1";

@@ -1,5 +1,4 @@
 { pkgs, ... }: {
-  # Keep the formatters right next to the app config!
   home.packages = with pkgs; [
     nixd
     nixfmt

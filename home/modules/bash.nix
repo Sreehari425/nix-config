@@ -4,7 +4,6 @@
     shellAliases = {
       ff = "fastfetch";
       nf = "neofetch";
-      hx = "helix";
       vmm = "virt-manager";
       zj = "zellij";
       jlog = "journalctl -xe";
