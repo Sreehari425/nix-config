@@ -16,8 +16,14 @@ in
     '';
   };
 
+  home.file.".local/share/fonts/devicons-regular.ttf" = {
+    source = ./fonts/devicons-regular.ttf;
+  };
   home.packages = [
     pkgs.papirus-icon-theme
     (pkgs.rofi.override { plugins = [ pkgs.rofi-emoji ]; })
+    pkgs.nerd-fonts.jetbrains-mono
+    pkgs.papirus-icon-theme
+
   ];
 }
