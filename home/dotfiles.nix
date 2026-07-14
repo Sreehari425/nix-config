@@ -18,5 +18,6 @@ in
 
   home.packages = [
     pkgs.papirus-icon-theme
+    (pkgs.rofi.override { plugins = [ pkgs.rofi-emoji ]; })
   ];
 }
