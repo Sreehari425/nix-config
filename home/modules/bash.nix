@@ -19,6 +19,7 @@
       la = "eza -a --icons --group-directories-first";
       lt = "eza --tree --icons --level=2";
       lh = "eza -lh --icons --group-directories-first";
+      lla = "eza -la --icons";
       hms =
         if isNixOS then
           "home-manager switch --flake ~/nix-config#sreehari-nixos"
