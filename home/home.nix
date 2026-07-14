@@ -13,6 +13,7 @@
     ./modules/ime.nix
     ./modules/hyprland.nix
     ./modules/cli.nix
+    # ./modules/zsh.nix  #dont want zsh for now ig lol
   ];
 
   home.username = "sreehari";
