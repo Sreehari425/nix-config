@@ -17,7 +17,7 @@
       l = "eza --icons --group-directories-first";
       ll = "eza -la --icons --git --group-directories-first";
       la = "eza -a --icons --group-directories-first";
-      lt = "eza --tree --icons --level=2";
+      lt = "eza --tree --icons --level=4";
       lh = "eza -lh --icons --group-directories-first";
       lla = "eza -la --icons";
       hms =
