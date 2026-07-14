@@ -11,6 +11,10 @@ in
 
     after = [ "network-online.target" ];
     wants = [ "network-online.target" ];
+    path = [
+      pkgs.curl
+      pkgs.coreutils
+    ];
 
     serviceConfig = {
       Type = "oneshot";
