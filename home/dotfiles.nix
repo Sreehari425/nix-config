@@ -16,8 +16,9 @@ in
     '';
   };
 
-  home.file.".local/share/fonts/devicons-regular.ttf" = {
-    source = ./fonts/devicons-regular.ttf;
+  home.file.".local/share/fonts" = {
+    source = ./fonts;
+    recursive = true;
   };
   home.packages = [
     pkgs.papirus-icon-theme
