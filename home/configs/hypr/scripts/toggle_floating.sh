@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 # to future some one who is reading this sounds stupid, but hyprland as of 0.54.3 dosent have globale floating/tiled toggle
 # since hyprland hot reload this work around i found
 

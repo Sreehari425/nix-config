@@ -34,5 +34,4 @@ in
 
   # Services
   services.hypridle.enable = true;
-  services.swaync.enable = true;
 }

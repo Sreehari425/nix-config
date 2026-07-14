@@ -3,7 +3,7 @@
 
 	"modules-left": ["custom/launcher","cpu","memory","disk","hyprland/workspaces"],
 	"modules-center": ["clock"],
-	"modules-right": ["custom/idle","custom/notification","keyboard-state" ,"tray","cava","backlight","pulseaudio","battery","custom/power"],
+	"modules-right": ["custom/idle","custom/notification","keyboard-state" ,"tray","backlight","pulseaudio","battery","custom/power"],
     "custom/idle": {
         "format": "{}",
     "exec": "pgrep -x hypridle > /dev/null && echo ' ' || echo ' '",

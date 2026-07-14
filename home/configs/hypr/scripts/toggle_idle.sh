@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 if pgrep -x "hypridle" > /dev/null; then
     pkill hypridle
     notify-send "Auto-Sleep" "DISABLED (Screen stays on)" -i "caffeine-on"

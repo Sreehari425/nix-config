@@ -14,6 +14,7 @@
     ./modules/hyprland.nix
     ./modules/cli.nix
     # ./modules/zsh.nix  #dont want zsh for now ig lol
+    ./modules/notifications.nix
   ];
 
   home.username = "sreehari";
