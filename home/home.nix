@@ -15,6 +15,7 @@
     ./modules/cli.nix
     # ./modules/zsh.nix  #dont want zsh for now ig lol
     ./modules/notifications.nix
+    ./modules/cursor.nix
   ];
 
   home.username = "sreehari";
