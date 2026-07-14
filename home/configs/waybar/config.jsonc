@@ -42,24 +42,24 @@
 			"default": ["", "", ""]
 		}
 	},
-    "cava": {
-            "framerate": 240,
-            "autosens": 1,
-            "sensitivity": 5,
-            "bars": 8,
-            "lower_cutoff_freq": 50,
-            "higher_cutoff_freq": 10000,
-            "method": "pulse",
-            "source": "auto",
-            "stereo": false,
-            "reverse": false,
-            "bar_delimiter": 0,
-            "monstercat": true,
-            "waves": true,
-            "noise_reduction": 0.77,
-            "input_delay": 0,
-            "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-             },
+    // "cava": {
+    //         "framerate": 240,
+    //         "autosens": 1,
+    //         "sensitivity": 5,
+    //         "bars": 8,
+    //         "lower_cutoff_freq": 50,
+    //         "higher_cutoff_freq": 10000,
+    //         "method": "pulse",
+    //         "source": "auto",
+    //         "stereo": false,
+    //         "reverse": false,
+    //         "bar_delimiter": 0,
+    //         "monstercat": true,
+    //         "waves": true,
+    //         "noise_reduction": 0.77,
+    //         "input_delay": 0,
+    //         "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+    //          },
 
     "backlight": {
             "device": "amdgpu_bl1", // FIXED: Changed from intel_backlight for your P14s AMD
