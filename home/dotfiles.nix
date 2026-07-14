@@ -15,9 +15,6 @@ in
       }
     '';
   };
-  xdg.dataFile = {
-    "icons/hypr-dots-black".source = ./configs/cursors/hypr-dots-black;
-  };
 
   home.packages = [
     pkgs.papirus-icon-theme
