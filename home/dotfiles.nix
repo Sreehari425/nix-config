@@ -17,7 +17,7 @@ in
   };
 
   home.file.".local/share/fonts" = {
-    source = ./fonts;
+    source = ./assets/fonts;
     recursive = true;
   };
   home.packages = [
