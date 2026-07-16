@@ -19,7 +19,7 @@
         required = true;
       };
       sendemail = {
-        smtpserver = "smtp.gmail.com"; # Fixed your broken string here too!
+        smtpserver = "smtp.gmail.com";
         smtpuser = "sreehari7102008@gmail.com";
         smtpencryption = "tls";
         smtpserverport = 587;
