@@ -6,6 +6,7 @@
     ./modules/bash.nix
     ./modules/git.nix
     ./modules/helix.nix
+    ./modules/gui.nix
     ./modules/zellij.nix
     ./modules/kitty.nix
     ./modules/catppuccin.nix
