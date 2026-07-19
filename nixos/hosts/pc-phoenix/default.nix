@@ -1,5 +1,6 @@
 {
   imports = [
+    ../../modules/services/openssh.nix
     ../../modules/fonts.nix
     ../../modules/graphical
     ../../modules/services/plasma-login-manager.nix
