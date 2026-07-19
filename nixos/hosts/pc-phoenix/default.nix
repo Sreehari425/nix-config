@@ -12,6 +12,7 @@
     ../../modules/desktops/kde-applications.nix
     ./baloo.nix
     ./bootloader.nix
+    # ./hardware-configuration.nix
   ];
 
   networking.hostName = "pc-phoenix";
