@@ -1,20 +1,15 @@
 {
   imports = [
-    ./battery.nix
     ../../modules/fonts.nix
     ../../modules/graphical
-    ../../modules/services/sddm.nix
-    ../../modules/desktops/hyprland.nix
+    ../../modules/services/plasma-login-manager.nix
     ../../modules/services/bluetooth.nix
     ../../modules/services/audio.nix
     ../../modules/services/printing.nix
     ../../modules/dns
     ../../modules/vpn/tailscale.nix
-    ./secureboot.nix
     ./kernel.nix
-    ../../modules/services/keyring.nix
-    ./fingerprint.nix
   ];
 
-  networking.hostName = "tp-orion";
+  networking.hostName = "pc-phoenix";
 }

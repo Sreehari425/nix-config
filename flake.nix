@@ -76,9 +76,27 @@
 
       nixosConfigurations.tp-orion = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = {
+          flakeTarget = "tp-orion";
+        };
+
         modules = [
           ./nixos/configuration.nix
           ./nixos/hosts/tp-orion
+          lanzaboote.nixosModules.lanzaboote
+          { nixpkgs.pkgs = systemPkgs; }
+        ];
+      };
+
+      nixosConfigurations.pc-phoenix = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          flakeTarget = "pc-phoenix";
+        };
+
+        modules = [
+          ./nixos/configuration.nix
+          ./nixos/hosts/pc-phoenix
           lanzaboote.nixosModules.lanzaboote
           { nixpkgs.pkgs = systemPkgs; }
         ];
