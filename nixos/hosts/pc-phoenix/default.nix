@@ -9,6 +9,8 @@
     ../../modules/dns
     ../../modules/vpn/tailscale.nix
     ./kernel.nix
+    ../../modules/desktops/kde-applications.nix
+    ./baloo.nix
   ];
 
   networking.hostName = "pc-phoenix";
