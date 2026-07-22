@@ -7,6 +7,7 @@
     ../../modules/services/bluetooth.nix
     ../../modules/services/audio.nix
     ../../modules/services/printing.nix
+    ../../modules/services/gaming.nix
     ../../modules/dns
     ../../modules/vpn/tailscale.nix
     ./kernel.nix
