@@ -5,7 +5,7 @@
     enable = true;
 
     settings = {
-      timeout = 5000;
+      timeout = 5;
       max-history = 5;
     };
 
