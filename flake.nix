@@ -21,6 +21,10 @@
     };
     catppuccin.url = "github:catppuccin/nix";
     quantum-launcher.url = "github:Sreehari425/quantumlauncher/nix";
+    helix-fork = {
+      url = "github:Sreehari425/helix/40d429de85641fc935d83b6e9cc0f133e4f3e1d5";
+      inputs.nixpkgs.follows = "nixpkgs"; # avoid duplicate nixpkgs eval, if your fork's flake takes it
+    };
 
   };
 
@@ -32,11 +36,15 @@
       catppuccin,
       quantum-launcher,
       lanzaboote,
+      helix-fork,
       ...
+
     }: # Destructure nixgl here
     let
       system = "x86_64-linux";
-      homePkgs = import nixpkgs ({ inherit system; } // (import ./home/home-packages.nix));
+      homePkgs = import nixpkgs (
+        { inherit system; } // (import ./home/home-packages.nix) { inherit helix-fork; }
+      );
 
       systemPkgs = import nixpkgs ({ inherit system; } // (import ./nixos/system-packages.nix));
 
@@ -63,6 +71,7 @@
         pkgs = homePkgs;
 
         extraSpecialArgs = {
+
           inherit nixgl;
           quantumLauncher = quantum-launcher;
           isNixOS = true;

@@ -4,10 +4,13 @@
     nixfmt
     clippy
     clang-tools
+    copilot-language-server
+
   ];
 
   programs.helix = {
     enable = true;
+    package = pkgs.helix;
     defaultEditor = true;
     settings = {
       theme = "catppuccin_mocha";
@@ -36,6 +39,10 @@
           installable.expr = "import <nixpkgs> {}";
           formatting.command = [ "nixfmt" ];
         };
+        copilot = {
+          command = "copilot-language-server";
+          args = [ "--stdio" ];
+        };
       };
       language = [
         {
@@ -52,6 +59,14 @@
           formatter.command = "nixfmt";
           auto-format = true;
         }
+        {
+          name = "rust";
+          language-servers = [
+            "rust-analyzer"
+            "copilot"
+          ];
+        }
+
       ];
     };
   };

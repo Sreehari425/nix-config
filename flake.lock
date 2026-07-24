@@ -83,6 +83,28 @@
         "type": "github"
       }
     },
+    "helix-fork": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1784872243,
+        "narHash": "sha256-D5K0b0+V1VAXZppEcqa01MpbbL3ck/BhFwN8j0ms9qA=",
+        "owner": "Sreehari425",
+        "repo": "helix",
+        "rev": "40d429de85641fc935d83b6e9cc0f133e4f3e1d5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Sreehari425",
+        "repo": "helix",
+        "rev": "40d429de85641fc935d83b6e9cc0f133e4f3e1d5",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -110,7 +132,7 @@
           "nixpkgs"
         ],
         "pre-commit": "pre-commit",
-        "rust-overlay": "rust-overlay"
+        "rust-overlay": "rust-overlay_2"
       },
       "locked": {
         "lastModified": 1783496806,
@@ -234,7 +256,7 @@
       "inputs": {
         "flake-compat": "flake-compat_2",
         "nixpkgs": "nixpkgs_3",
-        "rust-overlay": "rust-overlay_2"
+        "rust-overlay": "rust-overlay_3"
       },
       "locked": {
         "lastModified": 1784287146,
@@ -254,6 +276,7 @@
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
+        "helix-fork": "helix-fork",
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
         "nixgl": "nixgl",
@@ -262,6 +285,27 @@
       }
     },
     "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "helix-fork",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775358767,
+        "narHash": "sha256-f2eC+WIfhjevCPQILuV08i/kmKZzYZpUvkom/33VxCA=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "20fd44bc663daa53a2575e01293e24e681d62244",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_2": {
       "inputs": {
         "nixpkgs": [
           "lanzaboote",
@@ -282,7 +326,7 @@
         "type": "github"
       }
     },
-    "rust-overlay_2": {
+    "rust-overlay_3": {
       "inputs": {
         "nixpkgs": "nixpkgs_4"
       },

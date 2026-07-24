@@ -1,5 +1,6 @@
+{ helix-fork }:
 {
-  overlays = import ./overlays;
+  overlays = import ./overlays { inherit helix-fork; };
   config = {
     allowUnfree = true;
   };
