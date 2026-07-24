@@ -27,8 +27,8 @@
         file-picker.hidden = false;
       };
       keys.insert = {
-        A-l = "inline_completion_accept";
-        A-e = "inline_completion_dismiss";
+        C-l = "inline_completion_accept";
+        C-e = "inline_completion_dismiss";
       };
 
     };
