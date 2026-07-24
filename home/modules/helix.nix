@@ -1,11 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, isNixOS, ... }: {
   home.packages = with pkgs; [
     nixd
     nixfmt
     clippy
     clang-tools
     copilot-language-server
-
   ];
 
   programs.helix = {
@@ -40,8 +39,16 @@
           formatting.command = [ "nixfmt" ];
         };
         copilot = {
-          command = "copilot-language-server";
-          args = [ "--stdio" ];
+          command = if isNixOS then "copilot-language-server" else "env";
+          args =
+            if isNixOS then
+              [ "--stdio" ]
+            else
+              [
+                "LD_LIBRARY_PATH=/usr/lib"
+                "copilot-language-server"
+                "--stdio"
+              ];
         };
       };
       language = [
@@ -66,7 +73,6 @@
             "copilot"
           ];
         }
-
       ];
     };
   };
