@@ -26,6 +26,11 @@
         indent-guides.render = true;
         file-picker.hidden = false;
       };
+      keys.insert = {
+        C-l = "inline_completion_accept";
+        C-e = "inline_completion_dismiss";
+      };
+
     };
     languages = {
       language-server = {
@@ -49,6 +54,16 @@
                 "copilot-language-server"
                 "--stdio"
               ];
+          config = {
+            editorInfo = {
+              name = "Helix";
+              version = "25.01";
+            };
+            editorPluginInfo = {
+              name = "helix-copilot";
+              version = "0.1.0";
+            };
+          };
         };
       };
       language = [
