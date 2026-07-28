@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     mpc
     ncmpcpp
+    rmpc
   ];
 
   services.mpd = {
