@@ -154,11 +154,11 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1785248157,
-        "narHash": "sha256-9FXMrIuxQLtQnZhjqALRwJwlUxtTzINoup0Za5T/dcw=",
+        "lastModified": 1785250438,
+        "narHash": "sha256-Dhcf+H2QcBfhvRG6pAtYPWcCtUNKMf58gT4S7b3hvaU=",
         "owner": "Sreehari425",
         "repo": "mpd-mpris",
-        "rev": "3a080dcf8997abf740bc08c30f546de35b85ff46",
+        "rev": "086245c01ae6dbd12bde8142f345af08e632d2ed",
         "type": "github"
       },
       "original": {
