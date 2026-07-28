@@ -25,6 +25,7 @@
       url = "github:Sreehari425/helix/40d429de85641fc935d83b6e9cc0f133e4f3e1d5";
       inputs.nixpkgs.follows = "nixpkgs"; # avoid duplicate nixpkgs eval, if your fork's flake takes it
     };
+    mpd-mpris.url = "github:Sreehari425/mpd-mpris";
 
   };
 
@@ -37,6 +38,7 @@
       quantum-launcher,
       lanzaboote,
       helix-fork,
+      mpd-mpris,
       ...
 
     }: # Destructure nixgl here

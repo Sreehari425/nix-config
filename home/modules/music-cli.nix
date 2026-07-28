@@ -5,6 +5,7 @@
     mpc
     ncmpcpp
     rmpc
+    mpd-mpris
   ];
 
   services.mpd = {
@@ -18,6 +19,9 @@
         name "PipeWire Output"
       }
     '';
+  };
+  services.mpd-mpris = {
+    enable = true;
   };
 
   programs.ncmpcpp = {
