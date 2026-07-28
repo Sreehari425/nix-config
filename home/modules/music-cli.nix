@@ -1,11 +1,17 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
     mpc
     ncmpcpp
     rmpc
-    mpd-mpris
+  ];
+  disabledModules = [
+    "services/mpd-mpris.nix"
   ];
 
   services.mpd = {

@@ -58,12 +58,13 @@
 
         # Pass nixgl down into your modules so modules/kitty.nix can read it
         extraSpecialArgs = {
-          inherit nixgl;
+          inherit nixgl mpd-mpris;
           quantumLauncher = quantum-launcher;
           isNixOS = false;
         };
 
         modules = [
+          mpd-mpris.homeManagerModules.default
           catppuccin.homeModules.catppuccin # for rofi powermenu.sh
           ./home/home.nix
         ];
@@ -74,13 +75,14 @@
 
         extraSpecialArgs = {
 
-          inherit nixgl;
+          inherit nixgl mpd-mpris;
           quantumLauncher = quantum-launcher;
           isNixOS = true;
         };
 
         modules = [
           catppuccin.homeModules.catppuccin # for rofi powermenu.sh
+          mpd-mpris.homeManagerModules.default
           ./home/home.nix
         ];
       };
