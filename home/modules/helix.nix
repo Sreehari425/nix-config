@@ -73,7 +73,7 @@
             command = "clang-format";
             args = [ "--style=file" ];
           };
-          auto-format = true;
+          auto-format = false;
         }
         {
           name = "nix";
