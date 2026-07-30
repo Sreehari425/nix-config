@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-if pgrep -x "hypridle" > /dev/null; then
-    pkill hypridle
+
+if systemctl --user is-active --quiet hypridle.service; then
+    systemctl --user stop hypridle.service
     notify-send "Auto-Sleep" "DISABLED (Screen stays on)" -i "caffeine-on"
 else
-    hypridle &
-    disown
-    notify-send "Auto-Sleep" "ENABLED (Sysyem will not idle)" -i "caffeine-off"
+    systemctl --user start hypridle.service
+    notify-send "Auto-Sleep" "ENABLED (System will idle normally)" -i "caffeine-off"
 fi
 
 pkill -RTMIN+10 waybar
