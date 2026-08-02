@@ -43,17 +43,33 @@
           installable.expr = "import <nixpkgs> {}";
           formatting.command = [ "nixfmt" ];
         };
+        # copilot = {
+        #   command = if isNixOS then "copilot-language-server" else "env";
+        #   args =
+        #     if isNixOS then
+        #       [ "--stdio" ]
+        #     else
+        #       [
+        #         "LD_LIBRARY_PATH=/usr/lib"
+        #         "copilot-language-server"
+        #         "--stdio"
+        #       ];
+        #   config = {
+        #     editorInfo = {
+        #       name = "Helix";
+        #       version = "25.01";
+        #     };
+        #     editorPluginInfo = {
+        #       name = "helix-copilot";
+        #       version = "0.1.0";
+        #     };
+        #   };
+        # };
+
         copilot = {
-          command = if isNixOS then "copilot-language-server" else "env";
-          args =
-            if isNixOS then
-              [ "--stdio" ]
-            else
-              [
-                "LD_LIBRARY_PATH=/usr/lib"
-                "copilot-language-server"
-                "--stdio"
-              ];
+          command = "copilot-language-server";
+          args = [ "--stdio" ];
+
           config = {
             editorInfo = {
               name = "Helix";
