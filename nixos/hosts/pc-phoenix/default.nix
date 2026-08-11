@@ -16,6 +16,7 @@
     ./bootloader.nix
     ./../../modules/desktops/plasma.nix
     ./hardware-configuration.nix
+    ../../modules/heroic.nix
   ];
 
   networking.hostName = "pc-phoenix";
