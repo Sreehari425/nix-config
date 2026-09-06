@@ -83,7 +83,7 @@ hl.config({
     },
     cursor = {
         sync_gsettings_theme = true, -- Forces GTK/GSettings to sync XCursor theme instantly
-        enable_hyprcursor = false,    -- Keeps the new engine active
+        enable_hyprcursor = true,    -- Keeps the new engine active
     },
     animations = {
         enabled = true,
