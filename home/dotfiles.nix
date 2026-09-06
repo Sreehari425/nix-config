@@ -10,6 +10,7 @@ in
     "rofi".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/rofi";
     "oh-my-posh/1_shell.omp.json".source = ./configs/oh-my-posh/1_shell.omp.json;
     "nixpkgs".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/nixpkgs";
+    "uwsm".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/uwsm";
 
   };
 

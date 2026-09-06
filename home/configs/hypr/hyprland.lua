@@ -19,6 +19,9 @@ hl.monitor({
     scale = 1,
 })
 
+
+
+
 hl.on("hyprland.start", function()
     -- hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
@@ -37,7 +40,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("awww img ~/.config/hypr/wallpaper.jpg")
 
     hl.exec_cmd([[sh -lc 'gsettings set org.gnome.desktop.interface cursor-theme hypr-dots-black >/dev/null 2>&1']])
-    hl.exec_cmd("hyprctl setcursor hypr-dots-black 1")
+    -- hl.exec_cmd("hyprctl setcursor hypr-dots-black 1")
 end)
 
 hl.env("QT_IM_MODULE", "fcitx")
@@ -78,7 +81,10 @@ hl.config({
             vibrancy = 0.1696,
         },
     },
-
+    cursor = {
+        sync_gsettings_theme = true, -- Forces GTK/GSettings to sync XCursor theme instantly
+        enable_hyprcursor = false,    -- Keeps the new engine active
+    },
     animations = {
         enabled = true,
     },
