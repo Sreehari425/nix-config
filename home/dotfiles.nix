@@ -11,6 +11,12 @@ in
     "oh-my-posh/1_shell.omp.json".source = ./configs/oh-my-posh/1_shell.omp.json;
     "nixpkgs".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/nixpkgs";
     "uwsm".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/uwsm";
+    "OpenTabletDriver/settings.json".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfiles}/OpenTabletDriver/settings.json";
+    "OpenTabletDriver/Plugins".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfiles}/OpenTabletDriver/Plugins";
+    "OpenTabletDriver/Presets".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfiles}/OpenTabletDriver/Presets";
 
   };
 

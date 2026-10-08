@@ -25,6 +25,7 @@
       inputs.nixpkgs.follows = "nixpkgs"; # avoid duplicate nixpkgs eval, if your fork's flake takes it
     };
     mpd-mpris.url = "github:Sreehari425/mpd-mpris";
+    excali-desktop.url = "github:Sreehari425/excali-desktop";
 
   };
 
@@ -38,6 +39,7 @@
       lanzaboote,
       helix-fork,
       mpd-mpris,
+      excali-desktop,
       ...
 
     }: # Destructure nixgl here
@@ -57,13 +59,15 @@
 
         # Pass nixgl down into your modules so modules/kitty.nix can read it
         extraSpecialArgs = {
-          inherit nixgl mpd-mpris;
+          inherit nixgl mpd-mpris excali-desktop;
           quantumLauncher = quantum-launcher;
           isNixOS = false;
         };
 
         modules = [
           mpd-mpris.homeManagerModules.default
+          excali-desktop.homeManagerModules.default
+
           catppuccin.homeModules.catppuccin # for rofi powermenu.sh
           ./home/home.nix
         ];
@@ -74,13 +78,15 @@
 
         extraSpecialArgs = {
 
-          inherit nixgl mpd-mpris;
+          inherit nixgl mpd-mpris excali-desktop;
           quantumLauncher = quantum-launcher;
           isNixOS = true;
         };
 
         modules = [
           catppuccin.homeModules.catppuccin # for rofi powermenu.sh
+          excali-desktop.homeManagerModules.default
+
           mpd-mpris.homeManagerModules.default
           ./home/home.nix
         ];

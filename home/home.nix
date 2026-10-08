@@ -18,6 +18,7 @@
     ./modules/notifications.nix
     ./modules/cursor.nix
     ./modules/music-cli.nix
+    ./modules/excalidraw.nix
   ];
 
   home.username = "sreehari";
