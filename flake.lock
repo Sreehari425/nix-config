@@ -38,11 +38,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1791435384,
-        "narHash": "sha256-YEICmG5zLHDK5lO0FTgs0Bz92fYWn6MVEsw3osp9Nj8=",
+        "lastModified": 1791442916,
+        "narHash": "sha256-UXu0S9ThJ0n/1D07rIUOf3z9qxOkyvxXWbvjQkfGtko=",
         "owner": "Sreehari425",
         "repo": "excali-desktop",
-        "rev": "09fb1869bb4267763aee99f9a1e8493d61912781",
+        "rev": "11e6540443720db5859f65cfebd98b3117403532",
         "type": "github"
       },
       "original": {
