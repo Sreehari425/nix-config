@@ -147,6 +147,7 @@ for i = 1, 10 do
     })
 end
 
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("wayscriber --daemon-toggle"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
 hl.bind("switch:Lid Switch", hl.dsp.exec_cmd(hyprlock), { locked = true })
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
