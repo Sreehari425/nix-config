@@ -15,7 +15,7 @@
     };
 
     nixgl = {
-      url = "github:nix-community/nixGL";
+      url = "github:Sreehari425/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
