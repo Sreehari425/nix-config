@@ -26,6 +26,9 @@
         else
           "home-manager switch --flake ~/nix-config#sreehari-standalone";
     };
+    initExtra = ''
+      export PATH="/home/sreehari/.local/share/../bin:$PATH"
+    '';
   };
   programs.eza = {
     enable = true;
