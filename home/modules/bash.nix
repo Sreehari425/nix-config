@@ -1,4 +1,4 @@
-{ isNixOS, ... }:
+{ isNixOS, nixName, ... }:
 
 {
   programs.bash = {
@@ -21,10 +21,7 @@
       lh = "eza -lh --icons --group-directories-first";
       lla = "eza -la --icons";
       hms =
-        if isNixOS then
-          "home-manager switch --flake ~/nix-config#sreehari-nixos"
-        else
-          "home-manager switch --flake ~/nix-config#sreehari-standalone";
+        "home-manager switch --flake ~/nix-config#sreehari-${if isNixOS then "nixos" else "standalone"}-${nixName}";
     };
     initExtra = ''
       export PATH="/home/sreehari/.local/share/../bin:$PATH"

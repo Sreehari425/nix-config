@@ -53,54 +53,82 @@
 
     in
     {
-      homeConfigurations.sreehari-standalone = home-manager.lib.homeManagerConfiguration {
-
-        pkgs = homePkgs;
-
-        # Pass nixgl down into your modules so modules/kitty.nix can read it
-        extraSpecialArgs = {
-          inherit nixgl mpd-mpris excali-desktop;
-          quantumLauncher = quantum-launcher;
-          isNixOS = false;
+      homeConfigurations = {
+        sreehari-nixos-tp-orion = home-manager.lib.homeManagerConfiguration {
+          pkgs = homePkgs;
+          extraSpecialArgs = {
+            inherit nixgl mpd-mpris excali-desktop;
+            quantumLauncher = quantum-launcher;
+            isNixOS = true;
+            nixName = "tp-orion";
+          };
+          modules = [
+            catppuccin.homeModules.catppuccin
+            excali-desktop.homeManagerModules.default
+            mpd-mpris.homeManagerModules.default
+            ./home/home.nix
+          ];
         };
 
-        modules = [
-          mpd-mpris.homeManagerModules.default
-          excali-desktop.homeManagerModules.default
-
-          catppuccin.homeModules.catppuccin # for rofi powermenu.sh
-          ./home/home.nix
-        ];
-      };
-      homeConfigurations.sreehari-nixos = home-manager.lib.homeManagerConfiguration {
-
-        pkgs = homePkgs;
-
-        extraSpecialArgs = {
-
-          inherit nixgl mpd-mpris excali-desktop;
-          quantumLauncher = quantum-launcher;
-          isNixOS = true;
+        sreehari-nixos-pc-phoenix = home-manager.lib.homeManagerConfiguration {
+          pkgs = homePkgs;
+          extraSpecialArgs = {
+            inherit nixgl mpd-mpris excali-desktop;
+            quantumLauncher = quantum-launcher;
+            isNixOS = true;
+            nixName = "pc-phoenix";
+          };
+          modules = [
+            catppuccin.homeModules.catppuccin
+            excali-desktop.homeManagerModules.default
+            mpd-mpris.homeManagerModules.default
+            ./home/home.nix
+          ];
         };
 
-        modules = [
-          catppuccin.homeModules.catppuccin # for rofi powermenu.sh
-          excali-desktop.homeManagerModules.default
+        sreehari-standalone-tp-orion = home-manager.lib.homeManagerConfiguration {
+          pkgs = homePkgs;
+          extraSpecialArgs = {
+            inherit nixgl mpd-mpris excali-desktop;
+            quantumLauncher = quantum-launcher;
+            isNixOS = false;
+            nixName = "tp-orion";
+          };
+          modules = [
+            mpd-mpris.homeManagerModules.default
+            excali-desktop.homeManagerModules.default
+            catppuccin.homeModules.catppuccin
+            ./home/home.nix
+          ];
+        };
 
-          mpd-mpris.homeManagerModules.default
-          ./home/home.nix
-        ];
+        sreehari-standalone-pc-phoenix = home-manager.lib.homeManagerConfiguration {
+          pkgs = homePkgs;
+          extraSpecialArgs = {
+            inherit nixgl mpd-mpris excali-desktop;
+            quantumLauncher = quantum-launcher;
+            isNixOS = false;
+            nixName = "pc-phoenix";
+          };
+          modules = [
+            mpd-mpris.homeManagerModules.default
+            excali-desktop.homeManagerModules.default
+            catppuccin.homeModules.catppuccin
+            ./home/home.nix
+          ];
+        };
       };
 
       nixosConfigurations.tp-orion = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
           flakeTarget = "tp-orion";
+          nixName = "tp-orion";
         };
 
         modules = [
           ./nixos/configuration.nix
-          ./nixos/hosts/tp-orion
+          ./hosts/tp-orion
           lanzaboote.nixosModules.lanzaboote
           { nixpkgs.pkgs = systemPkgs; }
         ];
@@ -110,11 +138,12 @@
         inherit system;
         specialArgs = {
           flakeTarget = "pc-phoenix";
+          nixName = "pc-phoenix";
         };
 
         modules = [
           ./nixos/configuration.nix
-          ./nixos/hosts/pc-phoenix
+          ./hosts/pc-phoenix
           lanzaboote.nixosModules.lanzaboote
           { nixpkgs.pkgs = systemPkgs; }
         ];
