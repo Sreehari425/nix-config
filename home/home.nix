@@ -20,6 +20,7 @@
     ./modules/music-cli.nix
     ./modules/excalidraw.nix
     ./modules/ai/ollama.nix
+    ./modules/ai/coding-agents.nix
   ];
 
   home.username = "sreehari";
