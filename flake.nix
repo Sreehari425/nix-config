@@ -67,6 +67,7 @@
             excali-desktop.homeManagerModules.default
             mpd-mpris.homeManagerModules.default
             ./home/home.nix
+            ./hosts/tp-orion/home.nix
           ];
         };
 
@@ -83,6 +84,7 @@
             excali-desktop.homeManagerModules.default
             mpd-mpris.homeManagerModules.default
             ./home/home.nix
+            ./hosts/pc-phoenix/home.nix
           ];
         };
 
@@ -99,6 +101,7 @@
             excali-desktop.homeManagerModules.default
             catppuccin.homeModules.catppuccin
             ./home/home.nix
+            ./hosts/tp-orion/home.nix
           ];
         };
 
@@ -115,6 +118,7 @@
             excali-desktop.homeManagerModules.default
             catppuccin.homeModules.catppuccin
             ./home/home.nix
+            ./hosts/pc-phoenix/home.nix
           ];
         };
       };

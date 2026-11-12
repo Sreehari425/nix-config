@@ -19,6 +19,7 @@
     ./modules/cursor.nix
     ./modules/music-cli.nix
     ./modules/excalidraw.nix
+    ./modules/ai/ollama.nix
   ];
 
   home.username = "sreehari";
