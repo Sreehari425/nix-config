@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -135,6 +134,7 @@
           ./hosts/tp-orion
           lanzaboote.nixosModules.lanzaboote
           { nixpkgs.pkgs = systemPkgs; }
+
         ];
       };
 
@@ -150,6 +150,7 @@
           ./hosts/pc-phoenix
           lanzaboote.nixosModules.lanzaboote
           { nixpkgs.pkgs = systemPkgs; }
+
         ];
       };
 
