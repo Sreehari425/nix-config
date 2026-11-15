@@ -8,7 +8,7 @@
     cursor-cli
     antigravity-cli
     devin-cli
-
+    github-copilot-cli
     # Desktop apps / IDEs
     code-cursor
     antigravity-ide
