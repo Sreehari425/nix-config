@@ -18,14 +18,20 @@ Name=mozc
 # Layout
 Layout=
 
-[GroupOrder]
-0=Default
 
-[Groups/0/Items/2]
-# Name
-Name=pinyin
-# Layout
-Layout=
+#will renable it later
+# [Groups/0/Items/2]
+# # Name
+# Name=pinyin
+# # Layout
+# Layout=
+
+# [Groups/0/Items/3]
+# # Name
+# Name=m17n_ml_swanalekha
+# # Layout
+# Layout=
+
 
 [GroupOrder]
 0=Default
