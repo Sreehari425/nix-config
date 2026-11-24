@@ -52,6 +52,7 @@
 
     in
     {
+      formatter.${system} = systemPkgs.nixfmt-tree;
       homeConfigurations = {
         sreehari-nixos-tp-orion = home-manager.lib.homeManagerConfiguration {
           pkgs = homePkgs;

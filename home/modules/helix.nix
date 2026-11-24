@@ -5,6 +5,7 @@
     clippy
     clang-tools
     copilot-language-server
+    nixfmt-tree
   ];
 
   programs.helix = {

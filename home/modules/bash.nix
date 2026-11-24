@@ -20,8 +20,9 @@
       lt = "eza --tree --icons --level=4";
       lh = "eza -lh --icons --group-directories-first";
       lla = "eza -la --icons";
-      hms =
-        "home-manager switch --flake ~/nix-config#sreehari-${if isNixOS then "nixos" else "standalone"}-${nixName}";
+      hms = "home-manager switch --flake ~/nix-config#sreehari-${
+        if isNixOS then "nixos" else "standalone"
+      }-${nixName}";
     };
     initExtra = ''
       export PATH="/home/sreehari/.local/share/../bin:$PATH"

@@ -1,4 +1,11 @@
-{ config, isNixOS, lib, nixgl, pkgs, ... }:
+{
+  config,
+  isNixOS,
+  lib,
+  nixgl,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.my.ai.ollama;
@@ -8,14 +15,16 @@ let
       ollamaPackage
     else
       pkgs.writeShellScriptBin "ollama" ''
-        exec ${nixgl.packages.${pkgs.stdenv.hostPlatform.system}.nixGLIntel}/bin/nixGLIntel ${ollamaPackage}/bin/ollama "$@"
+        exec ${
+          nixgl.packages.${pkgs.stdenv.hostPlatform.system}.nixGLIntel
+        }/bin/nixGLIntel ${ollamaPackage}/bin/ollama "$@"
       '';
 
-
-  ollamaEnvironment =
-    [ "OLLAMA_CONTEXT_LENGTH=${toString cfg.contextLength}" ]
-    ++ lib.optional cfg.vulkan "OLLAMA_VULKAN=1"
-    ++ lib.optional cfg.igpu "OLLAMA_IGPU_ENABLE=1";
+  ollamaEnvironment = [
+    "OLLAMA_CONTEXT_LENGTH=${toString cfg.contextLength}"
+  ]
+  ++ lib.optional cfg.vulkan "OLLAMA_VULKAN=1"
+  ++ lib.optional cfg.igpu "OLLAMA_IGPU_ENABLE=1";
 in
 {
   options.my.ai.ollama = {
